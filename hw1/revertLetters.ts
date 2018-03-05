@@ -7,15 +7,18 @@ function isWhitespace(char: string) {
 }
 
 function revert(word: string) {
-    const arr = word.split('');
-    for (let i = 0; i < arr.length / 2; i++) {
-        if (isLetter(arr[i]) && isLetter(arr[arr.length - i - 1])) {
-            let acc = arr[i];
-            arr[i] = arr[arr.length - i - 1];
-            arr[arr.length - i - 1] = acc;
+    return word.replace(/[a-zA-Z]+.*[a-zA-Z]+/, (str) =>  {
+        const arr = str.split('');
+        for (let i = 0; i < arr.length / 2; i++) {
+            if (isLetter(arr[i]) && isLetter(arr[arr.length - i - 1])) {
+                let acc = arr[i];
+                arr[i] = arr[arr.length - i - 1];
+                arr[arr.length - i - 1] = acc;
+            }
         }
-    }
-    return arr.join('');
+        return arr.join('');
+    });
+
 }
 
 function revertLetters(text: string) {
@@ -32,5 +35,3 @@ function revertLetters(text: string) {
     }
     return acc.length ? result.concat(revert(acc)) : result;
 }
-
-console.log('t1rat3s 2   wol5');
