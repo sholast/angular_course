@@ -2,7 +2,7 @@ function isLetter(char: string) {
     return /^[a-zA-Z]+$/.test(char);
 }
 
-function revert(word: string) {
+export default function revert(word: string) {
     return word.replace(/[a-zA-Z]+\S*[a-zA-Z]+/g, (str) =>  {
         const arr = str.split('');
         for (let i = 0; i < arr.length / 2; i++) {
@@ -15,7 +15,3 @@ function revert(word: string) {
         return arr.join('');
     });
 }
-
-console.log(revert('s1tar3t 2 hellow'));
-console.log(revert('s1ta$%r3t 2 hel^low'));
-console.log(revert('s1tar3t 2   low5'));
