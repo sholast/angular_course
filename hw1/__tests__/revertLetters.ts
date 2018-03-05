@@ -1,4 +1,4 @@
-import revertLetters  from "../revertLetters";
+import revertLetters  from "../src/revertLetters";
 
 describe('revertLetters', () => {
     it('s1tar3t 2 hellow  ->  t1rat3s 2 wolleh', () => {
